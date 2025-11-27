@@ -129,11 +129,13 @@ function Home({ environmentTabs, flagSelectors }: HomeProps) {
     }, [filename, memory, toggles, selectedFlags, environment, disabled]);
 
     return (
-        <>
+        <div style={{
+            "display": "flex",
+            "height": "100%",
+            "alignItems": "flex-start",
+        }}>
             {/* The control center */}
-            <Center sx={{
-                "height": "100%"
-            }}>
+            <div style={{ "marginBlock": "auto", "paddingBlock": "3em" }}>
                 <Paper padding="md" shadow="sm" withBorder sx={theme => ({
                     "width": "100%",
                     "backgroundColor": isDark ? theme.colors.dark[6] : theme.colors.gray[0]
@@ -158,7 +160,7 @@ function Home({ environmentTabs, flagSelectors }: HomeProps) {
                                                 setInvalidFilename(false);
                                                 setFileName(event.target.value);
                                             }
-                                        }}/>
+                                        }} />
                                     </Label>
                                 </InputCaption>
 
@@ -176,7 +178,7 @@ function Home({ environmentTabs, flagSelectors }: HomeProps) {
                                         return `${value} GB`;
                                     }} onChange={value => {
                                         setMemory(value);
-                                    }}/>
+                                    }} />
                                 </Label>
                             </Group>
 
@@ -278,7 +280,7 @@ function Home({ environmentTabs, flagSelectors }: HomeProps) {
                         } />
                     </Group>
                 </Paper>
-            </Center>
+            </div>
 
             {/* Modals */}
             <MemoryModal open={{
@@ -306,7 +308,7 @@ function Home({ environmentTabs, flagSelectors }: HomeProps) {
                 "disabled": disabled.modernVectors ?? false
             }} />
 
-        </>
+        </div>
     );
 }
 
