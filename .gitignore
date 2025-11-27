@@ -1,0 +1,6 @@
+/.next/
+/.blitz.config.compiled.js
+/.vscode
+
+/node_modules/
+/out/
